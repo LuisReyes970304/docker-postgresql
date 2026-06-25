@@ -11,10 +11,11 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
     volumes:
-      - riwi-db-data:/var/lib/postgresql
+      - postgres_data:/var/lib/postgresql
 
     ports:
       - "${POSTGRES_PORT}:5432"
 
 volumes:
-  riwi-db-data:
+  postgres_data:
+    name: ${POSTGRES_VOLUME_NAME}
